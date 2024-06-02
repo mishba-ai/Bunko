@@ -9,4 +9,3 @@
   <Header />
   <slot />
 </div>
-
