@@ -1,19 +1,27 @@
 <script>
-    import { supabase } from "../../../lib/helper/supabaseClient.js";
-   import {page} from '$app/stores';
+  import { supabase } from "../../../lib/helper/supabaseClient.js";
+  import { goto } from "$app/navigation";
 
-    
-        const login = async() => await  supabase.auth.signInWithOAuth({
-          provider: "google",
-        });
-    
-
+  async function signInWithGoogle() {
+  
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options:{
+          redirectTo:"https://localhost:5173/home"
+        }
+      });
+      if (error) {
+        console.error("error signing in ", error);
+      }
+      
+     
+  }
 </script>
 
 <body class="w-screen">
   <button
-    on:click={login}
-    class="border w-32 flex justify-center items-center hover:bg-slate-400 rounded-2xl bg-slate-400"
+    on:click={signInWithGoogle}
+    class="border w-48 p-3 flex justify-center items-center hover:bg-slate-400 rounded-2xl bg-slate-400"
     >Login with google</button
   >
 </body>

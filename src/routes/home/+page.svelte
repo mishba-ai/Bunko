@@ -2,6 +2,18 @@
   import Recommend from "$lib/Components/Recommend.svelte";
   import Featured from "$lib/Components/Featured.svelte";
   import Dailychallenge from "$lib/Components/Dailychallenge.svelte";
+  import {user} from '$lib/stores/authStore';
+  import {supabase} from '$lib/helper/supabaseClient.js'; 
+  import {goto} from '$app/navigation';
+
+  // async function signOut() {
+  //   const {error} = await supabase.auth.signOut();
+  //   if(error) {
+  //    goto('/auth/login');
+  //   }
+  // }
+
+  
 </script>
 
 <body class="bg-gradient-to-b from-[#c9e2f9] to-[#f1faee] px-5">

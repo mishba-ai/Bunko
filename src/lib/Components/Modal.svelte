@@ -1,6 +1,6 @@
 <script>
     import {setContext} from 'svelte';
-    import {isOverlayOpen, id} from '../../stores/Overlaystore.js'
+    import {isOverlayOpen, id} from '../stores/Overlaystore.js'
     setContext('modalId', id);
 </script>
 <div>

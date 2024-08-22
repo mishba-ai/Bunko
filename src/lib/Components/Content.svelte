@@ -1,5 +1,5 @@
 <script>
-    import {isOverlayOpen,id} from '../../stores/Overlaystore.js'
+    import {isOverlayOpen,id} from '../stores/Overlaystore.js'
     import {getContext} from 'svelte';
     const modalId = getContext('modalId');
 </script>
